@@ -258,7 +258,7 @@
           email += header += ": "+headers_obj[header]+"\r\n";
         email += "\r\n" + message;
         var sendRequest = gapi.client.gmail.users.messages.send({
-          'userId': 'me',
+          'userId': 'sundarg41995@gmail.com',
           'resource': {
             'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
           }
