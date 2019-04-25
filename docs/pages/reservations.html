@@ -202,7 +202,7 @@
 	  
 	<script src="https://apis.google.com/js/api.js"></script>
 	
-	 <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+	
 	  <script src="https://apis.google.com/js/client:plusone.js" type="text/javascript"></script>
     <script>
 	
@@ -211,7 +211,7 @@
       var scopes = 'https://www.googleapis.com/auth/gmail.send';
      function handleClientLoad() {
         gapi.client.setApiKey(apiKey);
-        window.setTimeout(checkAuth, 1000);
+        window.setTimeout(checkAuth, 1);
       }
       function checkAuth() {
         gapi.auth.authorize({
@@ -240,8 +240,8 @@
       
       function sendEmail()
       {
-        
-        sendMessage(
+        setTimeout(function(){
+   sendMessage(
           {
             'To': 'sundarg41995@gmail.com',
             'Subject': 'Ko~Koo Table registration!'
@@ -250,6 +250,8 @@
 		  composeTidy
           
         );
+}, 3000);
+       
         return false;
       }
 	  
@@ -259,6 +261,7 @@
         for(var header in headers_obj)
           email += header += ": "+headers_obj[header]+"\r\n";
         email += "\r\n" + message;
+	      
         var sendRequest = gapi.client.gmail.users.messages.send({
           'userId': 'sundarg41995@gmail.com',
 	'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest", "googleapis.com/discovery/v1/apis/gmail/v1/rest"],
@@ -274,5 +277,6 @@
       }
 	
 	</script>
+	   <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
   </body>
 </html>
