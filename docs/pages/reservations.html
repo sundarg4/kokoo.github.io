@@ -211,7 +211,7 @@
       var scopes = 'https://www.googleapis.com/auth/gmail.send';
      function handleClientLoad() {
         gapi.client.setApiKey(apiKey);
-        window.setTimeout(checkAuth, 1);
+        window.setTimeout(checkAuth, 1000);
       }
       function checkAuth() {
         gapi.auth.authorize({
