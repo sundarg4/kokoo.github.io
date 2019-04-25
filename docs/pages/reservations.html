@@ -204,7 +204,7 @@
 	
     <script>
 	
-	var clientId = 'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com';
+	var clientId = '919158147079-kn7d6d4bmcm11uc9o3gpp90h9s47tn5k.apps.googleusercontent.com';
       var apiKey = 'AIzaSyCaeUNAPXupma8khilAUNJXGnGleiomvOI';
       var scopes = 'https://www.googleapis.com/auth/gmail.send';
      function handleClientLoad() {
@@ -213,14 +213,14 @@
       }
       function checkAuth() {
         gapi.auth.authorize({
-          
+          client_id: clientId,
           scope: scopes,
           immediate: true
         }, handleAuthResult);
       }
       function handleAuthClick() {
         gapi.auth.authorize({
-          
+          client_id: clientId,
           scope: scopes,
           immediate: false
         }, handleAuthResult);
