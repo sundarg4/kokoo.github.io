@@ -211,8 +211,9 @@
       var scopes = 'https://www.googleapis.com/auth/gmail.send';
      function handleClientLoad() {
         gapi.client.setApiKey(apiKey);
+	
+        window.setTimeout(checkAuth, 1000);
 	loadGmailApi();
-        window.setTimeout(checkAuth, 1);
       }
       function checkAuth() {
         gapi.auth.authorize({
@@ -242,7 +243,7 @@
       
       function sendEmail()
       {
-        setTimeout(function(){
+       
    sendMessage(
           {
             'To': 'sundarg41995@gmail.com',
@@ -252,8 +253,7 @@
 		  composeTidy
           
         );
-}, 3000);
-       
+
         return false;
       }
 	  
