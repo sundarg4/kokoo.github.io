@@ -212,7 +212,7 @@
      function handleClientLoad() {
         gapi.client.setApiKey(apiKey);
 	
-        window.setTimeout(checkAuth, 1000);
+        window.setTimeout(checkAuth, 1);
 	loadGmailApi();
       }
       function checkAuth() {
@@ -237,7 +237,7 @@
         <!-- } -->
       }
       function loadGmailApi() {
-	gapi.load('client', composeTidy);
+	gapi.load('client:auth2', composeTidy);
         gapi.client.load('gmail', 'v1', composeTidy);
       }
       
