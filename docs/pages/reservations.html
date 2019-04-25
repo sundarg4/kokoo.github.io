@@ -265,7 +265,7 @@
         email += "\r\n" + message;
 	      
         var sendRequest = gapi.client.gmail.users.messages.send({
-          'userId': 'sundarg41995@gmail.com',
+          'userId': 'me',
 	'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest", "googleapis.com/discovery/v1/apis/gmail/v1/rest"],
           'resource': {
             'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
