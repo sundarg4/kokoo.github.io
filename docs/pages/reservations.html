@@ -23,6 +23,21 @@
       emailjs.init("user_v3gBQsq5lPOxRE8Dbcduf");
    })();
 </script>
+<script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('reservationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var template_params = {
+		"reply_to": $('#inputEmail').val(),
+		"to_name": $('#inputName').val()
+	  }
+
+	var service_id = "default_service";
+	var template_id = "template_X8iiruTz";
+	emailjs.send(service_id, template_id, template_params);
+            });
+        }
+    </script>
   </head>
   <body id="top">
     <header>
@@ -112,15 +127,15 @@
           src="https://res.cloudinary.com/pictureelement/image/upload/q_auto,f_auto,c_scale,w_2560/v1536179526/website-template-3/cover-reservations.jpg"
           alt=""
           class="reservations-form-bg">
-        <form onsubmit="return sendEmail();">
+        <form id="reservationForm">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputName">NAME:</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Your Name Here">
+              <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name Here">
             </div>
             <div class="form-group col-md-6">
               <label for="inputEmail">EMAIL:</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="name@domain.com">
+              <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="name@domain.com">
             </div>
           </div>
           <div class="form-row">
