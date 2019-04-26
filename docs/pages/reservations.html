@@ -31,7 +31,7 @@
                 var template_params = {
 		"reply_to": $('#inputEmail').val(),
 		"to_name": $('#inputName').val(),
-		"inputNumber": $('#inputNumber').val().toString(),
+		"inputNumber": $('#inputNumber').val(),
 		"inputDate": $('#inputDate').val(),
 		"inputTime": $('#inputTime').val(),
 		"inputPhone": $('#inputPhone').val()
@@ -160,8 +160,8 @@
             </div>
 	   	  
             <div class="form-group col-md-2">
-              <label for="inputNumber">PARTY OF:</label>
-              <input type="number" min="1" class="form-control" id="inputNumber" name="inputNumber" placeholder="1">
+              <label for="inputNumber">NUMBER OF PERSONS:</label>
+              <input type="text" class="form-control" id="inputNumber" name="inputNumber" placeholder="1">
             </div>
             <div class="form-group col-md-5">
               <label for="inputPhone">PHONE:</label>
