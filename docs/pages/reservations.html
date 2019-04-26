@@ -41,6 +41,7 @@
 	var template_id = "template_Nb1BEFuT";
 	emailjs.send(service_id, template_id, template_params);
             });
+	alert("Thanks for the reservation. We will send an Email the confirmation on your booking request shortly.");
         }
     </script>
   </head>
@@ -152,13 +153,8 @@
 	 <div class="form-group col-md-5">
               <label for="inputTime">TIME:</label>
               
-                    <input type='text' id="inputTime" name="inputTime" class="form-control" />
-			<script type="text/javascript">
-				$(document).ready(function(){
-				   $('#inputTime').timepicker();
-				});
-
-			</script>
+                    <input type='text' id="inputTime" name="inputTime" min="07:00" max="23:00" class="form-control" />
+			
             </div>
 	   	  
             <div class="form-group col-md-2">
