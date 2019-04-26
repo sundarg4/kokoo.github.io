@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="../css/animate.css">
     <!-- Default stylesheet -->
     <link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_v3gBQsq5lPOxRE8Dbcduf");
+   })();
+</script>
   </head>
   <body id="top">
     <header>
@@ -197,88 +203,19 @@
     </script>
     <script src="../js/site.js"></script>
     <script src="../js/reservations-animations.js"></script>
+    
 	  
-	  
-	  
-	<script src="https://apis.google.com/js/api.js"></script>
-	
-	
-	  <script src="https://apis.google.com/js/client:plusone.js" type="text/javascript"></script>
-    <script>
-	
-	var clientId = '919158147079-kn7d6d4bmcm11uc9o3gpp90h9s47tn5k.apps.googleusercontent.com';
-      var apiKey = 'AIzaSyCaeUNAPXupma8khilAUNJXGnGleiomvOI';
-      var scopes = 'https://www.googleapis.com/auth/gmail.send';
-     function handleClientLoad() {
-        gapi.client.setApiKey(apiKey);
-	
-        window.setTimeout(checkAuth, 1);
-	loadGmailApi();
-      }
-      function checkAuth() {
-        gapi.auth.authorize({
-          client_id: clientId,
-          scope: scopes,
-          immediate: true
-        }, handleAuthResult);
-      }
-      function handleAuthClick() {
-        gapi.auth.authorize({
-          client_id: clientId,
-          scope: scopes,
-          immediate: false
-        }, handleAuthResult);
-        return false;
-      }
-      function handleAuthResult(authResult) {
-        <!--  if(authResult && !authResult.error) { -->
-          loadGmailApi();
-         
-        <!-- } -->
-      }
-      function loadGmailApi() {
-	gapi.load('client:auth2', composeTidy);
-        gapi.client.load('gmail', 'v1', composeTidy);
-      }
-      
-      function sendEmail()
-      {
-       
-   sendMessage(
-          {
-            'To': 'sundarg41995@gmail.com',
-            'Subject': 'Ko~Koo Table registration!'
-          },
-          'Thanks for your booking. We wish you an exciting experience with us.',
-		  composeTidy
-          
-        );
+  function sendEmail()
+  {
+	  var template_params = {
+		"reply_to": $('#inputEmail').val(),
+		"to_name": $('#inputName').val()
+	  }
 
-        return false;
-      }
-	  
-	  function sendMessage(headers_obj, message,callback)
-      {
-        var email = '';
-        for(var header in headers_obj)
-          email += header += ": "+headers_obj[header]+"\r\n";
-        email += "\r\n" + message;
-	      
-        var sendRequest = gapi.client.gmail.users.messages.send({
-          'userId': 'me',
-	'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest", "googleapis.com/discovery/v1/apis/gmail/v1/rest"],
-          'resource': {
-            'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
-          }
-        });
-        return sendRequest.execute(callback);
-      }
-	  function composeTidy()
-      {
-        alert("Done!");
-      }
-	
-	</script>
-	   <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+	var service_id = "default_service";
+	var template_id = "template_X8iiruTz";
+	emailjs.send(service_id, template_id, template_params);
+	return false;
+  }   
   </body>
 </html>
