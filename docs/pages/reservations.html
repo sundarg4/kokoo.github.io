@@ -20,7 +20,7 @@
 <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init("user_v3gBQsq5lPOxRE8Dbcduf");
+      emailjs.init("user_aCRrIfirUUPMw5rgfAs3Q");
    })();
 </script>
 <script type="text/javascript">
@@ -29,11 +29,15 @@
                 event.preventDefault();
                 var template_params = {
 		"reply_to": $('#inputEmail').val(),
-		"to_name": $('#inputName').val()
+		"to_name": $('#inputName').val(),
+		"inputNumber": $('#inputNumber').val(),
+		"inputDate": $('#inputDate').val(),
+		"inputTime": $('#inputTime').val()
+			
 	  }
 
 	var service_id = "default_service";
-	var template_id = "template_X8iiruTz";
+	var template_id = "template_Nb1BEFuT";
 	emailjs.send(service_id, template_id, template_params);
             });
         }
@@ -143,6 +147,23 @@
               <label for="inputDate">DATE:</label>
               <input type="date" class="form-control" id="inputDate">
             </div>
+		  
+	 <div class="form-row">
+            <div class='form-group col-md-5' id='datetimepicker3'>
+              <label for="inputTime">TIME:</label>
+              <input type='text' id ="inputTime" name="inputTime" class="form-control" />
+		     <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+		    <script type="text/javascript">
+		    $(function () {
+			$('#datetimepicker3').datetimepicker({
+			    format: 'LT'
+			});
+		    });
+		 </script>
+    	   </div>
+	   	  
             <div class="form-group col-md-2">
               <label for="inputNumber">PARTY OF:</label>
               <input type="number" min="1" class="form-control" id="inputNumber" placeholder="1">
