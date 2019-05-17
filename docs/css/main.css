@@ -309,11 +309,11 @@ a, a:hover {
  */
 
 .page-footer {  
-  color: #E5E5E5;
+  color: black;
   padding-top: 4rem;
   font-size: 0.75rem;
   text-align: center;
-  background: #001F40;
+  background:white;
   line-height: 1.75;
 }
 
@@ -328,7 +328,7 @@ a, a:hover {
 .page-footer-title {
   font-size: .75rem;
   font-weight: 700;
-  color: #fff;
+  color: black;
   margin-bottom: 1rem;
 }
 
@@ -1094,4 +1094,25 @@ a, a:hover {
   .menu-icon {
     max-width: 30px;
   }
+}
+
+
+
+
+
+.customStyle{
+  height: 200px;
+}
+
+.foodCustomStyle{
+  height: 100px;
+}
+
+.foodCustomStyleExtra{
+  height: 100px;
+  width: 175px;
+}
+
+.footerCustomStyle{
+  border-top: 1px solid black;
 }
